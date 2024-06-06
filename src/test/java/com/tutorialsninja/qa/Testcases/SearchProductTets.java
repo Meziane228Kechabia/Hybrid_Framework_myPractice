@@ -15,6 +15,7 @@ public class SearchProductTets extends TestBase {
 		}
 public WebDriver driver;
 @BeforeMethod
+//
 public void searchSetUp() {
 		 //driver = new ChromeDriver();
 		 //driver.manage().window().maximize();
