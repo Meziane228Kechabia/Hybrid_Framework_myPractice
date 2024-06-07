@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
+
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,14 +19,24 @@ import com.tutorialsNinja.qa.Utilities.Utils;
 
 public class TestBase {
 	public WebDriver driver;
-	FileInputStream ip;
 	public Properties prop;
+	public Properties dataprop;
+	public FileInputStream ip;
+	public FileInputStream ip1;
+	
+	
+	
 	
 	public TestBase() throws Exception {
 		prop = new Properties();
 		ip = new FileInputStream (System.getProperty("user.dir") + "\\src\\test\\java\\com\\tutorialsninja\\qa\\Config\\config.properties");
-		prop.load(ip);                                            
+		prop.load(ip);     
+		
+		dataprop = new Properties();
+		ip1 = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\com\\tutorialsninja\\qa\\TestData\\dataProp.properties");
 		}
+	
+	
 public WebDriver intializeBrowserAndOpenApplication(String browserName) {
 	if (browserName.equals("Chrome")) {
 		ChromeOptions options = new ChromeOptions();
